@@ -3,7 +3,7 @@ body{
     background: #000; 
     transition: .5s;
     overflow-x: hidden;
-    overflow-y: hidden; 
+    /* overflow-y: hidden;  */
     color: #000;
 }
 body.white{ 

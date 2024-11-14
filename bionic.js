@@ -1,7 +1,5 @@
 history.scrollRestoration = "manual"
 
-
-
 // //lenis 스크롤 스무스
 const lenis = new Lenis();
 lenis.on('scroll', ScrollTrigger.update);
@@ -11,35 +9,26 @@ gsap.ticker.add((time) => {
 gsap.ticker.lagSmoothing(0);
 
 
-
-
-
 // Lottie 애니메이션 로드 및 설정
 gsap.set('.header',{autoAlpha:0});
 gsap.set('.footer',{autoAlpha:0});
 const animation = lottie.loadAnimation({
-    container: document.getElementById('lottie-container'), // 애니메이션을 표시할 요소
-    renderer: 'svg', // 렌더러: 'svg' 또는 'canvas' 사용 가능
+    container: document.getElementById('lottie-container'), 
+    renderer: 'svg', 
     loop: false,
-    autoplay: true, // 자동 재생 여부
+    autoplay: true, 
     path: '/assets/video/lottie.json',
-    
 });
-
 animation.addEventListener('complete', function() {
-    gsap.to('#lottie-container', { autoAlpha: 0 });
+    gsap.to('#lottie-container', { autoAlpha: 0,duration:1 });
     gsap.to('.header',{autoAlpha:1});
     gsap.to('.footer',{autoAlpha:1});
-
 });
-
-
 
 
 
 $('.header .header-content .header-util-item-link').click(function(e){
     e.preventDefault();
-
     gsap.to(window, {
         duration: 0.7,
         scrollTo: { x: "#sc1" },
@@ -220,7 +209,6 @@ const breekText = gsap.timeline({
         end:'20% 70%',
         containerAnimation: hori1,
         toggleActions:"play none none reverse",
-        // markers:true,
         onLeave:function(){
             gsap.to('.breek-sticky-block p .char-wrap',{ x:0 });
         },
@@ -303,8 +291,6 @@ space01.to('.space-inner p .char-wrap',{ x:0 });
 
 
 // circle gsap
-// const CirclesplitTextH2 = new SplitType('hero02-service-tx', { types: 'chars' });
-
 gsap.set('.hero02-point-list .hero02-point-item:nth-child(1)',{rotate:"315deg",});
 gsap.set('.hero02-point-list .hero02-point-item:nth-child(2)',{rotate:"0deg",});
 gsap.set('.hero02-point-list .hero02-point-item:nth-child(3)',{rotate:"45deg",});
@@ -315,14 +301,10 @@ gsap.set('.hero02-point-list .hero02-point-item:nth-child(7)',{rotate:"225deg",}
 gsap.set('.hero02-point-list .hero02-point-item:nth-child(8)',{rotate:"270deg",});
 
 
-// gsap.set('.circle-line, .hero02-point-list',{opacity:1});
-// gsap.set('.circle-line',{opacity:0});
-// gsap.set('.circle-top-cur-tx p:nth-child(1)',{opacity:1})
-// gsap.set('.circle-tx-block',{opacity:0});
-// gsap.set('.circle-bot-tx',{opacity:0});
-// gsap.set('.circle-bot-tx:nth-child(1)',{opacity:1});
 
-gsap.set('.hero02-service-item',{opacity:0});
+gsap.set('.hero02-point-item .point', { scale: 0 });
+gsap.set('.hero02-service-item', { opacity: 0 });
+
 let lastScroll = 0;
 const tl = gsap.timeline({
     scrollTrigger:{
@@ -336,21 +318,21 @@ const tl = gsap.timeline({
             gsap.to('.hero02-bignum-item',{ yPercent:100*-idx });
             gsap.to('.circle-top-cur-tx p',{ yPercent:100*-idx });
             gsap.to('.circle-bot-tx',{ yPercent:100*-idx });
-            // gsap.to('.hero02-service-tx',{ opacity:1 });
             pointList = document.querySelectorAll('.hero02-point-item');
             serviceItem = document.querySelectorAll('.hero02-service-item');
 
             // 스크롤이 내려갈 때
             if (self.direction > 0) {
                 gsap.to(pointList[idx2].querySelector('.point'), 1, {  scale:1,duration:2 });
-                // gsap.to(serviceItem[idx1],{opacity:1});
+                gsap.to($('.hero02-service-item')[idx],{ opacity:1 });
             } 
             // 스크롤이 올라갈 때
             else {
                 // 인덱스 범위를 확인하여 투명도 조절
                 if (idx2 + 1 < pointList.length) {
                     gsap.to(pointList[idx2 + 1].querySelector('.point'), 1, {  scale:0,duration:2 });
-                    // gsap.to(serviceItem[idx1],{opacity:0});
+                    gsap.to($('.hero02-service-item')[idx],{ opacity:0 });
+
 
                 }
             }
@@ -361,54 +343,8 @@ const tl = gsap.timeline({
 
 tl.to(".js-circle-line", {
     ease:'none',
-    strokeDashoffset: 0, // 시작점에서 원 전체가 채워질 때까지
+    strokeDashoffset: 0, 
 },'line');
-// tl.to('.scroll-content', { 
-//     backgroundColor: "#000", 
-//     duration: 1 
-// });
-
-
-
-
-// const totalSteps = 8; // 총 애니메이션 단계 수
-
-// for (let i = 0; i < totalSteps; i++) {
-//     tl02.to($(`.hero02-bignum-item`)[i], { y: -100, opacity: 1 })
-   
-//     .to($(`.hero02-service-item`)[i].querySelectorAll('.arrow-ic-block02'), { opacity: 0 })
-//     .to($(`.hero02-service-item`)[i].querySelectorAll('.arrow-ic-block'), { opacity: 1 }, "<")
-//     .to($(`.hero02-service-item`)[i], { opacity: 1, stagger: 0.05 }, "<")
-//     .to($(`.hero02-bignum-item`)[i], { y: -100, opacity: 0 });
-// }
-
-
-
-// const CirclesplitTextH2 = new SplitType('hero02-service-tx', { types: 'chars' });
-
-// gsap.set('.hero02-point-list .hero02-point-item:nth-child(1)',{rotate:"0deg",autoAlpha:0});
-// gsap.set('.hero02-point-list .hero02-point-item:nth-child(2)',{rotate:"45deg",autoAlpha:0});
-// gsap.set('.hero02-point-list .hero02-point-item:nth-child(3)',{rotate:"90deg",autoAlpha:0});
-// gsap.set('.hero02-point-list .hero02-point-item:nth-child(4)',{rotate:"135deg",autoAlpha:1});
-// gsap.set('.hero02-point-list .hero02-point-item:nth-child(5)',{rotate:"180deg",autoAlpha:1});
-// gsap.set('.hero02-point-list .hero02-point-item:nth-child(6)',{rotate:"225deg",autoAlpha:0});
-// gsap.set('.hero02-point-list .hero02-point-item:nth-child(7)',{rotate:"270deg",autoAlpha:0});
-// gsap.set('.hero02-point-list .hero02-point-item:nth-child(8)',{rotate:"310deg",autoAlpha:0});
-
-// gsap.set('.circle-line, .hero02-point-list',{opacity:1});
-// gsap.set('.circle-top-cur-tx p:nth-child(1)',{opacity:1})
-// // gsap.set('.circle-tx-block',{opacity:0});
-// gsap.set('.circle-bot-tx',{opacity:0});
-// // gsap.set('.circle-bot-tx:nth-child(1)',{opacity:1});
-// const tl = gsap.timeline({
-//     scrollTrigger:{
-//         trigger:".vertical-inner",
-//         start:"0% 0%",
-//         end:"100% 100%",
-//         scrub:1,
-//     }
-// });
-// tl.from($('.hero02-circle'),{yPercent:100});//원나타남
 
 
 
@@ -471,11 +407,6 @@ const space02Text02 = gsap.timeline({
 });
 space02Text02.to('.space02-right-block .space02-left-title-block .sub-tx .char-wrap',{ x:0 });
 space02Text02.to('.space02-right-block .space02-left-list-tx .char-wrap ',{ x:0 });
-// space02Text02.from('.space02-right-block .space02-arrow-block .arrow-ic ',{ opacity:0 },"<");
-
-
-
-
 
 
 //space02 gsap
