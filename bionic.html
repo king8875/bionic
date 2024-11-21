@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="kr">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,13 +21,14 @@
     <!-- lenis -->
     <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script> 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
-
+    <!-- text split -->
     <script src="https://unpkg.com/split-type"></script>
     <script src="./bionic.js" defer></script>
 
 </head>
 <body>
     <div id="lottie-container">
+        <span class="blind">lottie</span>
         <div class="lottie-content"></div>
     </div>
 
@@ -51,7 +52,6 @@
                             <img class="teket-logo" src="/assets/img/logo.svg" alt="logo">
                         </a>
                     </div>
-
                 </div>
                 <div class="header-util">
                     <ul class="header-util-list">
@@ -95,18 +95,80 @@
                     </div>
                 </div>
 
+                <div class="header-menu-block">
+                    <div class="header-menu">
+                        <div class="header-menu-tx">
+                            <p>MENU</p>
+                            <p>CLOSE</p>
+                        </div>
+                        <div class="header-menu-lines">
+                            <div class="menu-line"></div>
+                            <div class="menu-line"></div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
+
+
+        <div class="header-sidebar-block">
+            <ul class="header-sidebar-list">
+                <li class="header-sidebar-item">
+                    <a class="header-sidebar-link" href="#">
+                        <span>01</span>
+                        <p>Home</p>
+                        <div class="tx-bottom-line"></div>
+                    </a>
+                </li>
+                <li class="header-sidebar-item">
+                    <a class="header-sidebar-link" href="#">
+                        <span>02</span>
+                        <p>Waarden</p>
+                    </a>
+                </li>
+                <li class="header-sidebar-item">
+                    <a class="header-sidebar-link" href="#">
+                        <span>03</span>
+                        <p>Services</p>
+                    </a>
+                </li>
+                <li class="header-sidebar-item">
+                    <a class="header-sidebar-link" href="#">
+                        <span>04</span>
+                        <p>Het Model</p>
+                    </a>
+                </li>
+                <li class="header-sidebar-item">
+                    <a class="header-sidebar-link" href="#">
+                        <span>05</span>
+                        <p>Studio</p>
+                    </a>
+                </li>
+                <li class="header-sidebar-item">
+                    <a class="header-sidebar-link" href="#">
+                        <span>06</span>
+                        <p>Contact</p>
+                    </a>
+                </li>
+                <li class="header-sidebar-item">
+                    <a class="header-sidebar-link" href="#">
+                        <span>07</span>
+                        <p>go</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+
     </header>
     <main>
         <div class="main-wrapper">
             <div class="main-inner">
-                
+            
                 <div class="horizontal-inner">
-
                     <div class="scroll-content">
-
-                        <section class="sec-hero" >
+                        <section class="sec-hero">
                             <span class="blind">LASER</span>
                             <div class="hero-inner">
                                 <div class="hero-laser-block">
@@ -122,7 +184,6 @@
                                 </div>
                             </div>
                         </section>
-                        
                         <section class="sec-breek" id="sc1">
                             <div class="breek-inner">
                                 <div class="breek-sticky-block">
@@ -143,7 +204,6 @@
                                 </div>
                             </div>
                         </section>
-
                         <section class="sec-waar">
                             <div class="waar-inner">
                                 <div class="waar-sticky-block">
@@ -218,10 +278,6 @@
                                 <div class="item"><div class="box"></div></div>
                             </div>
                         </section>
-
-
-
-                        
                         <section class="sec-space">
                             <div class="space-inner">
                                 <h2 class="main-tx" data-text="split">
@@ -236,16 +292,11 @@
                                 </p>
                             </div>
                         </section>
-
                     </div>
                 </div>
             </div>
-
             <div class="vertical-inner" data-white="true">
-
                 <div class="vertical-sticky-block">
-
-
                     <section class="sec-hero02">
                         <div class="hero02-inner">
 
@@ -317,10 +368,7 @@
                                         
                                     </div>
                                 </div>
-                                
                             </div>
-
-
 
                             <ul class="hero02-service-list">
 
@@ -428,23 +476,11 @@
                                 </ul>
                                 <div class="white-block"></div>
                             </div>
-
-
-                            
                         </div>
                     </section>
-
-
-
-
-
                 </div>
-
-
             </div>
 
-
-            
             <div class="horizontal-container">
                 <div class="horizontal02-inner">
                     <div class="scroll-content02">
@@ -452,6 +488,7 @@
                         <section class="blank-block"></section>
 
                         <section class="sec-space02">
+
                             <div class="space02-inner">
                                 <div class="space02-left-block">
                                     <div class="space02-left-title-block">
@@ -664,6 +701,7 @@
                                     </div>
                                 </div>
                             </div>
+
                         </section>
 
                         <section class="sec-studio">
@@ -676,25 +714,17 @@
                         </section>
 
                         <section class="sec-studio01">
-
                             <div class="studio-inner01">
                                 <h2 class="studio-bigtx">Goede artiesten<br>
                                     komen we vanzelf<br>
                                     tegen. Dus blijf<br>
-                                    creëren.</h2>
+                                    creëren.
+                                </h2>
                             </div>
-
                         </section>
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
-
 
         </div>
     </main>

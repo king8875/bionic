@@ -13,11 +13,6 @@
     clip: rect(0, 0, 0, 0);
 }
 
-/* section{
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
-} */
-
 .big-num{
     font-size: 35vh;
     font-family: Trash-Medium,sans-serif;
