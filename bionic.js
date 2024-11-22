@@ -10,8 +10,8 @@ gsap.ticker.lagSmoothing(0);
 
 
 // Lottie 애니메이션 로드 및 설정
-gsap.set('.header', { autoAlpha: 1 });
-gsap.set('.footer', { autoAlpha: 1 });
+gsap.set('.header', { autoAlpha: 0 });
+gsap.set('.footer', { autoAlpha: 0 });
 const animation = lottie.loadAnimation({
     container: document.getElementById('lottie-container'),
     renderer: 'svg',
@@ -23,6 +23,11 @@ animation.addEventListener('complete', function () {
     gsap.to('#lottie-container', { autoAlpha: 0, duration: 1 });
     gsap.to('.header', { autoAlpha: 1 });
     gsap.to('.footer', { autoAlpha: 1 });
+    gsap.from('.hero-laser-block #letter-l', { autoAlpha: 0, x: -100, duration: 1 });
+    gsap.from('.hero-laser-block #letter-a', { autoAlpha: 0, x: -100, duration: 1 });
+    gsap.from('.hero-laser-block #letter-s', { autoAlpha: 0, x: -100, duration: 1 });
+    gsap.from('.hero-laser-block #letter-e', { autoAlpha: 0, x: -100, duration: 1 });
+    gsap.from('.hero-laser-block #letter-r', { autoAlpha: 0, x: -100, duration: 1 });
 });
 
 $('.header .header-content .header-util-item-link').click(function (e) {
@@ -32,6 +37,8 @@ $('.header .header-content .header-util-item-link').click(function (e) {
         scrollTo: { x: "#footer" },
     });
 });
+
+
 
 //text분리 함수
 const splitTextH2 = new SplitType('[data-text="split"]', { types: 'chars' });
@@ -122,31 +129,7 @@ $('.header-login-link').on('mouseenter', function () {
 
 });
 
-const HeaderSidebar = $('.header-menu');
-let isSidebarOpen = false;
-gsap.set('.header-sidebar-block', { autoAlpha: 0 })
-$(HeaderSidebar).on('click', function () {
-    if (!isSidebarOpen) {
-        gsap.to('.header-sidebar-block', {
-            yPercent: 0,
-            autoAlpha: 1,
-        });
-        gsap.to('.main-wrapper', {
-            autoAlpha: 0
-        });
-        isSidebarOpen = true;
 
-    } else {
-        gsap.to('.header-sidebar-block', {
-            yPercent: -100,
-            autoAlpha: 0,
-        });
-        gsap.to('.main-wrapper', {
-            autoAlpha: 1
-        });
-        isSidebarOpen = false;
-    }
-});
 
 
 // 텍스트 분리 함수
@@ -173,7 +156,10 @@ $('.header-util-item-link').each(function () {
 let mm = gsap.matchMedia();
 //pc 버전
 mm.add("(min-width: 1001px)", function () {
-
+    if (!sessionStorage.getItem('reloaded')) {
+        sessionStorage.setItem('reloaded', true); // 새로고침 확인용 플래그 설정
+        location.reload(); // 새로고침
+    }
     // 첫번째 가로 스크롤 gsap
     const hori1 = gsap.to('.scroll-content', {
         scrollTrigger: {
@@ -569,6 +555,46 @@ mm.add("(min-width: 1001px)", function () {
 
 //모바일 버전
 mm.add("(max-width: 1000px)", function () {
+    if (!sessionStorage.getItem('reloaded')) {
+        sessionStorage.setItem('reloaded', true); // 새로고침 확인용 플래그 설정
+        location.reload(); // 새로고침
+    }
+
+    const HeaderSidebar = $('.header-menu');
+    let isSidebarOpen = false;
+    gsap.set('.header-sidebar-block', { autoAlpha: 0 });
+    gsap.set('.header-menu-tx p:nth-child(1)', { autoAlpha: 1 });
+    gsap.set('.header-menu-tx p:nth-child(2)', { autoAlpha: 0 });
+    $(HeaderSidebar).on('click', function () {
+        if (!isSidebarOpen) {
+            gsap.to('.header-sidebar-block', { yPercent: 0, autoAlpha: 1, });
+            gsap.to('.main-wrapper', { autoAlpha: 0 });
+            gsap.to('.header-menu-tx p:nth-child(1)',{autoAlpha:0});
+            gsap.to('.header-menu-tx p:nth-child(2)',{autoAlpha:1});
+            gsap.to('.header-menu-lines .menu-line:first-child',{
+                clipPath: "inset(0% 0% 0% 0%)",
+                duration:1,
+                ease: "power1.inOut" // 애니메이션 효과,
+
+            });
+            isSidebarOpen = true;
+        } else {
+            gsap.to('.header-sidebar-block', { yPercent: -100, autoAlpha: 0, });
+            gsap.to('.main-wrapper', { autoAlpha: 1 });
+            gsap.to('.header-menu-tx p:nth-child(1)',{autoAlpha:1});
+            gsap.to('.header-menu-tx p:nth-child(2)',{autoAlpha:0});
+            gsap.to('.header-menu-lines .menu-line:first-child',{
+                clipPath: "inset(100% 0% 0% 0%)",
+                duration:1,
+                ease: "power1.inOut" // 애니메이션 효과,
+
+            });
+            isSidebarOpen = false;
+        }
+    });
+
+
+
     // 첫번째 가로 스크롤 gsap
     const hori1 = gsap.to('.scroll-content', {
         scrollTrigger: {
@@ -632,11 +658,11 @@ mm.add("(max-width: 1000px)", function () {
         trigger: '.sec-breek',
         start: "30% 50%",
         end: '100% 50%',
-        onEnter: function(){
-            gsap.to('.breek-bot-tx',{x:-300});
+        onEnter: function () {
+            gsap.to('.breek-bot-tx', { x: -300 });
         },
-        onLeave: function() {
-            gsap.to('.breek-bot-tx',{x:0});
+        onLeave: function () {
+            gsap.to('.breek-bot-tx', { x: 0 });
         }
     });
 
