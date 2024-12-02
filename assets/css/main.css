@@ -305,7 +305,7 @@ body.white{ background: #fff; transition: .5s; }
     position: absolute;
     left: 2.5rem;
     bottom: 20%;
-    font-size: 31vh;
+    font-size: 30vh;
     line-height: .6;
     letter-spacing: -.05em;
 }
@@ -314,7 +314,7 @@ body.white{ background: #fff; transition: .5s; }
     bottom: -187px;
     background: #fff;
     width: 500px;
-    height: 160px;
+    height: 170px;
 }
 .hero02-bignum-list{
     position: absolute;
@@ -475,13 +475,16 @@ body.white{ background: #fff; transition: .5s; }
     opacity: 1;
 }
 
-.space02-right-block{ padding-left: 50px; }
+.space02-right-block{ padding-left: 30px; }
 .space02-left-title-block{
     display: flex;
     align-items: flex-end;
-    column-gap: 3rem;
+    column-gap: 2rem;
 }
-.space02-left-title-block .big-num{ overflow: hidden; }
+.space02-left-title-block .big-num{ 
+    overflow: hidden; 
+
+}
 .space02-left-title-block .sub-tx{
     max-width: 23.125rem;
     margin-bottom: 4rem;
@@ -605,7 +608,7 @@ body.white{ background: #fff; transition: .5s; }
     .space02-left-title-block{
         display: flex;
         align-items: flex-start;
-        column-gap: 3rem;
+        column-gap: 2rem;
     }
     .space02-mid-bar{ display:none; }
     .space02-left-block,
@@ -810,3 +813,4 @@ body.white{ background: #fff; transition: .5s; }
 
     
 }
+

@@ -574,8 +574,7 @@ mm.add("(max-width: 1000px)", function () {
             gsap.to('.header-menu-lines .menu-line:first-child',{
                 clipPath: "inset(0% 0% 0% 0%)",
                 duration:1,
-                ease: "power1.inOut" // 애니메이션 효과,
-
+                ease: "power1.inOut" 
             });
             isSidebarOpen = true;
         } else {
@@ -586,7 +585,7 @@ mm.add("(max-width: 1000px)", function () {
             gsap.to('.header-menu-lines .menu-line:first-child',{
                 clipPath: "inset(100% 0% 0% 0%)",
                 duration:1,
-                ease: "power1.inOut" // 애니메이션 효과,
+                ease: "power1.inOut" 
 
             });
             isSidebarOpen = false;
