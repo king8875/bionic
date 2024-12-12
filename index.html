@@ -2,8 +2,9 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bionic</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Laserbysonymusic</title>
+    <link rel="icon" href="./favicon.png">
     <!-- swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@7/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./assets/css/layout.css">
@@ -22,7 +23,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
     <!-- text split -->
     <script src="https://unpkg.com/split-type"></script>
-    <script src="./bionic.js" defer></script>
+    <script src="./index.js" defer></script>
 
 </head>
 <body>
@@ -31,11 +32,13 @@
     </div>
 
     <div class="video-container">
-        <img class="first_img" src="/assets/img/1031_pc.jpg" alt>
-        <img class="second_img" src="/assets/img/main2.jpg" alt>
-        <img class="third_img" src="/assets/img/teket_img01.jpg" alt>
-        <video autoplay muted loop src="/assets/video/SPEEDCROSS 6 .mp4"></video>
-        <div class="video-overlay"></div>
+        <img class="first_img" src="./assets/img/1031_pc.jpg" alt>
+        <img class="second_img" src="./assets/img/main2.jpg" alt>
+        <img class="third_img" src="./assets/img/teket_img01.jpg" alt>
+        <div class="video-content">
+            <video autoplay muted loop src="./assets/video/SPEEDCROSS 6 .mp4"></video>
+            <div class="video-overlay"></div>
+        </div>
     </div>
 
     <header class="header">
@@ -45,7 +48,7 @@
                 <div class="header-logo">
                     <div class="header-logo-inner">
                         <a href="#">
-                            <img class="teket-logo" src="/assets/img/logo.svg" alt="logo">
+                            <img class="teket-logo" src="./assets/img/logo.svg" alt="logo"/>
                         </a>
                     </div>
                 </div>
@@ -90,7 +93,6 @@
                         </a>
                     </div>
                 </div>
-
                 <div class="header-menu-block">
                     <div class="header-menu">
                         <div class="header-menu-tx">
@@ -103,10 +105,8 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
-
 
         <div class="header-sidebar-block">
             <ul class="header-sidebar-list">
@@ -155,8 +155,6 @@
                 </li>
             </ul>
         </div>
-
-
     </header>
     <main>
         <div class="main-wrapper">
@@ -183,7 +181,8 @@
                         <section class="sec-breek" id="sc1">
                             <div class="breek-inner">
                                 <div class="breek-sticky-block">
-                                    <h2 data-text="split">Wij zijn een allround<br>
+                                    <h2 data-text="split">
+                                        Wij zijn een allround<br>
                                         muzieklabel met focus op<br>
                                         twee dingen: autonomie en<br>
                                         creativiteit
@@ -230,7 +229,7 @@
                                 </div>
                             </div>
                         </section>
-                        <section class="sec-card">
+                        <section class="sec-card hidden">
                             <div class="frame">
                                 <div class="item"><div class="box"></div></div>
                                 <div class="item"><div class="box"></div></div>
@@ -274,7 +273,7 @@
                                 <div class="item"><div class="box"></div></div>
                             </div>
                         </section>
-                        <section class="sec-space">
+                        <section class="sec-space" data-white="true">
                             <div class="space-inner">
                                 <h2 class="main-tx" data-text="split">
                                     De sterkste mix<br>
@@ -291,11 +290,10 @@
                     </div>
                 </div>
             </div>
-            <div class="vertical-inner" data-white="true">
+            <div class="vertical-inner">
                 <div class="vertical-sticky-block">
                     <section class="sec-hero02">
                         <div class="hero02-inner">
-
                             <div class="hero02-circle-block">
                                 <div class="hero02-circle-inner">
                                     <div class="hero02-circle">
@@ -361,7 +359,7 @@
                                                 </ul>
                                             </li>
                                         </ul>
-                                        
+                                    
                                     </div>
                                 </div>
                             </div>
@@ -470,8 +468,8 @@
                                     <li class="hero02-bignum-item">07</li>
                                     <li class="hero02-bignum-item">08</li>
                                 </ul>
-                                <div class="white-block"></div>
                             </div>
+                            <div class="white-block"></div>
                         </div>
                     </section>
                 </div>
@@ -479,11 +477,8 @@
             <div class="horizontal-container">
                 <div class="horizontal02-inner">
                     <div class="scroll-content02">
-
                         <section class="blank-block"></section>
-
                         <section class="sec-space02">
-
                             <div class="space02-inner">
                                 <div class="space02-left-block">
                                     <div class="space02-left-title-block">
