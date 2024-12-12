@@ -290,9 +290,6 @@ mm.add("(min-width: 1001px)", function () {
         duration: 1
     });
 
-
-
-
     const space01 = gsap.timeline({
         scrollTrigger: {
             trigger: '.sec-space',
@@ -305,9 +302,6 @@ mm.add("(min-width: 1001px)", function () {
     space01.to('.space-inner h2 .char-wrap', { x: 0 });
     space01.to('.space-inner p .char-wrap', { x: 0 });
 
-
-
-
     // circle gsap
     gsap.set('.hero02-point-list .hero02-point-item:nth-child(1)', { rotate: "315deg", });
     gsap.set('.hero02-point-list .hero02-point-item:nth-child(2)', { rotate: "0deg", });
@@ -317,9 +311,6 @@ mm.add("(min-width: 1001px)", function () {
     gsap.set('.hero02-point-list .hero02-point-item:nth-child(6)', { rotate: "180deg", });
     gsap.set('.hero02-point-list .hero02-point-item:nth-child(7)', { rotate: "225deg", });
     gsap.set('.hero02-point-list .hero02-point-item:nth-child(8)', { rotate: "270deg", });
-
-
-
     gsap.set('.hero02-point-item .point', { scale: 0 });
     gsap.set('.hero02-service-item', { opacity: 0 });
 
@@ -350,11 +341,8 @@ mm.add("(min-width: 1001px)", function () {
                     if (idx2 + 1 < pointList.length) {
                         gsap.to(pointList[idx2 + 1].querySelector('.point'), 1, { scale: 0, duration: 2 });
                         gsap.to($('.hero02-service-item')[idx], { opacity: 0 });
-
-
                     }
                 }
-
             }
         }
     });
@@ -363,8 +351,6 @@ mm.add("(min-width: 1001px)", function () {
         ease: 'none',
         strokeDashoffset: 0,
     }, 'line');
-
-
 
     // 두번째 가로 스크롤 gsap
     const hori2 = gsap.to('.scroll-content02', {
@@ -406,7 +392,6 @@ mm.add("(min-width: 1001px)", function () {
             start: "0% 50%",
             end: '100% 50%',
             toggleActions: "play none none reverse",
-
         },
     });
     space02Text.to('.space02-left-title-block .sub-tx .char-wrap', { x: 0 });
@@ -469,12 +454,10 @@ mm.add("(min-width: 1001px)", function () {
     });
 
     $('.space02-left-block .space02-left-item').on('mouseenter', function () {
-
         gsap.to('.space02-right-block .space02-left-title-block', { opacity: 0 });
         gsap.to('.space02-right-block .space02-left-list', { opacity: 0 });
     });
     $('.space02-right-block .space02-left-item').on('mouseenter', function () {
-
         gsap.to('.space02-left-block .space02-left-title-block', { opacity: 0 });
         gsap.to('.space02-left-block .space02-left-list', { opacity: 0 });
     });
