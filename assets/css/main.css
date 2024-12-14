@@ -607,7 +607,6 @@ body.white{
     /* space02 */
     .sec-space02{ width: 200vw; height: 100vh; }
     .space02-inner{ 
-        position: sticky; 
         display: flex;
         top: 0;
     }
@@ -713,13 +712,15 @@ body.white{
     .space02-inner{ 
         position: sticky; 
         top: 0;
+        padding: 10px;
         display: flex;
         flex-direction: column;
     }
     .space02-left-title-block{
         display: flex;
         align-items: flex-start;
-        column-gap: 3rem;
+        column-gap: 1rem;
+        row-gap: 0rem;
     }
     .space02-mid-bar{ display:none; }
     .space02-left-block,
@@ -777,6 +778,7 @@ body.white{
 
 /* mobile */
 @media (max-width:768px) {
+    .horizontal-container{ height: 450vh; }
     .scroll-content{
         display: flex;
         width: max-content;
@@ -866,7 +868,10 @@ body.white{
         
     }
     /* space02 mov */
-    .space02-left-title-block .big-num{ font-size: 5rem; }
+    .space02-left-title-block .big-num{ 
+        overflow: inherit;
+        font-size: 5rem; 
+    }
 
     /* studio */
     .sec-studio{ position: relative; width: 100vw; height: 100vh; }
