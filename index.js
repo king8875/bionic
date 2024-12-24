@@ -7,6 +7,18 @@ gsap.ticker.add((time) => {
 });
 gsap.ticker.lagSmoothing(0);
 
+
+const mediaQuery = window.matchMedia("(max-width: 768px)");
+function handleMediaChange(e) {
+    if (e.matches) {
+        location.reload(); // 새로고침
+    } else {
+        location.reload(); // 새로고침
+    }
+}
+mediaQuery.addEventListener("change", handleMediaChange);
+
+
 // Lottie 애니메이션 로드 및 설정
 gsap.set('.header', { autoAlpha: 0 });
 gsap.set('.footer', { autoAlpha: 0 });
@@ -168,10 +180,7 @@ ScrollTrigger.create({
 let mm = gsap.matchMedia();
 //pc 버전
 mm.add("(min-width: 769px)", function () {
-    if (!sessionStorage.getItem('reloaded')) {
-        sessionStorage.setItem('reloaded', true); 
-        location.reload(); 
-    }
+    
     // 첫번째 가로 스크롤 gsap
     const hori1 = gsap.to('.scroll-content', {
         scrollTrigger: {
@@ -541,10 +550,7 @@ mm.add("(min-width: 769px)", function () {
 
 //모바일 버전
 mm.add("(max-width: 768px)", function () {
-    if (!sessionStorage.getItem('reloaded')) {
-        sessionStorage.setItem('reloaded', true); // 새로고침 확인용 플래그 설정
-        location.reload(); // 새로고침
-    }
+    
 
     const HeaderSidebar = $('.header-menu');
     let isSidebarOpen = false;
@@ -607,9 +613,6 @@ mm.add("(max-width: 768px)", function () {
     hero.to('.hero-laser-block #letter-s', { autoAlpha: 0, x: -100, duration: 1 });
     hero.to('.hero-laser-block #letter-e', { autoAlpha: 0, x: -100, duration: 1 });
     hero.to('.hero-laser-block #letter-r', { autoAlpha: 0, x: -100, duration: 1 });
-
-
-
 
     //2번째 section gsap
     const breek = gsap.timeline({
