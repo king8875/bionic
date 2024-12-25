@@ -30,6 +30,7 @@
     color: rgb(255 255 255);
 }
 .header .header-content .header-util-list{
+    position: relative;
     display: flex;
     justify-content: space-between;
     gap: 10px;
@@ -39,13 +40,6 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-}
-
-.header .header-content .header-util-item .tx-bottom-line{
-    width: 100%;
-    height: 1px;
-    transform: translateX(-100px);
-    background: #fff;
 }
 .header .header-content .header-util-item-link{ display: flex; }
 .header .header-content .header-util-item-link span{
@@ -70,12 +64,11 @@
 .header-menu{
     position: relative;
     display: flex;
-    align-items: center;
-    font-size: 0.875rem;
+    font-size: 20px;
     line-height: 1.2;
     text-transform: uppercase;
     font-weight: 300;
-    gap: .625rem;
+    gap: 10px;
 }
 .header-menu .header-menu-tx{ color: #fff; }
 .header-menu .header-menu-tx p:last-child{
@@ -99,7 +92,36 @@
     clip-path: inset(50% 0% 30% 0%);
     background: #000;
 }
+.header-sidebar-block{
+    display: none;
+}
 
+.header-sidebar-list{
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.header-sidebar-list .header-sidebar-link{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 6vw;
+    text-transform: uppercase;
+    height: 50px;
+    overflow: hidden;
+    mix-blend-mode: difference;
+}
+
+.tx-bottom-line{
+    position: absolute;
+    bottom: 0;left: 0;
+    width: 100%;
+    height: 1px;
+    transform: translateX(-100%);
+    background: #fff;
+}
 /* footer css */
 .footer{
     position: fixed;
@@ -147,20 +169,19 @@
 }
 .footer-util-block .footer-util-left{ display: flex; column-gap: 8rem; }
 
-@media (min-width:1001px) {
-    .header-sidebar-block{display: none;}
-}
-@media (max-width:1000px) {
-    .header .header-content .header-util{display: none;};
-    
+
+@media (min-width:769px) and (max-width:850px) {
+    .header .header-content .header-util{ display: none; }
+    .header-menu-block{ display: block; }
 }
 @media (max-width:768px) {
+    .header .header-content .header-util{ display: none; }
     .header{ top: 0px; }
     .header .header-inner{
         padding: 20px;
         top: 0px;
     }
-
+    .header-menu-block{ display: block; }
     .footer{
         position: fixed;
         left: 0;
@@ -170,6 +191,5 @@
         padding: 0 10px;
         z-index: 1000;
     }
-    .footer-util-block .footer-util-left{ display: flex; column-gap: 10px; }
-
+    .footer-util-block .footer-util-left{ display: flex; column-gap: 10px; };
 }
