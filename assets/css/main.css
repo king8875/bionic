@@ -10,7 +10,6 @@ body.white{
     color: #000;
     transition: .5s; 
 }
-
 #lottie-container{
     position: fixed;
     top: 0;left: 0;bottom: 0;right: 0;
@@ -32,7 +31,6 @@ body.white{
     gap: calc(100vw / 24 * 4);
     height: 100vh;
 }
-
 .video-container{
     position: fixed;
     top: 0;left: 0;bottom: 0;right: 0;
@@ -65,9 +63,7 @@ body.white{
     top: 0;left: 0;right: 0;bottom: 0;
     background: #000;
     opacity: 0.7;
-    
 }
-
 
 /* hero section */
 .sec-hero{
@@ -93,8 +89,7 @@ body.white{
 .breek-inner{
     width: 100vw;
     height: 100vh;
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
+    padding: 0 20px;
     color: #fff;
 }
 .breek-inner .breek-sticky-block{
@@ -102,7 +97,7 @@ body.white{
     justify-content: space-between;
     width: 100%;
     opacity: 1;
-    padding-top: 4rem;
+    padding-top: 50px;
 }
 .breek-inner .breek-sticky-block h2{
     padding-top: 50px;
@@ -129,7 +124,7 @@ body.white{
     text-transform: uppercase;
     line-height: 1;
     white-space: nowrap;
-    padding-bottom: 3.875rem;
+    padding-bottom: 20px;
 }
 .breek-bot-block h2{ width: max-content; }
 
@@ -145,48 +140,44 @@ body.white{
     flex-direction: column;
     justify-content: space-between;
     height: 100vh;
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
+    padding: 0 20px;
 }
 .waar-sticky-block{
     display: flex;
     justify-content: space-between;
-    padding-top: 7rem;
     overflow: hidden;
+    margin-top: 100px;
 }
 .waar-sticky-block h2{
-    font-size: 8.5vh;
+    font-size: 5vw;
     letter-spacing: -.05em;
     line-height: .9;
     text-transform: uppercase;
 }
 .waar-sticky-block p{
-    font-size: 1.125rem;    
+    font-size: 1vw;
     line-height: 1.2;
-    font-size: 1.125rem;
 }
-.waar-bot-block{ display: flex; padding-bottom: 8.875rem; }
-.waar-bot-block .waar-bot-list{ display: flex; gap: 4rem; }
+.waar-bot-block{ display: flex; padding-bottom: 100px; }
+.waar-bot-block .waar-bot-list{ display: flex; gap: 20px; }
 .waar-bot-block .waar-bot-item{
     display: flex;
     align-items: flex-end;
-    gap: 1.25rem;
+    gap: 10px;
     text-transform: uppercase;
 }
 .waar-bot-block .waar-bot-item .waar-tx-big{
-    font-size: 31vh;
+    font-size: 15vw;
     line-height: .6;
-    letter-spacing: -.05em;
 }
-.waar-bot-block .waar-bot-item .waar-tx-small{ width: 40vh; }
+.waar-bot-block .waar-bot-item .waar-tx-small{ max-width: 400px; }
 .waar-bot-block .waar-bot-item .waar-tx-small h3{
-    font-size: 6vh;
+    font-size: 3vw;
     line-height: 1;
 }
 .waar-bot-block .waar-bot-item .waar-tx-small p{
-    font-size: 1.125rem;
+    font-size: 1vw;
     line-height: 1.2;
-    margin-top: 1.25rem;
 }
 
 /* card css */
@@ -280,14 +271,14 @@ body.white{
     display: flex;
     flex-direction: column;
     line-height: 1.2;
-    font-size: 1rem;
+    font-size: 18px;
 }
 .hero02-service-item{
     position: relative;
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    margin-top: .5rem;
+    gap: 10px;
+    margin-top: 10px;
     opacity: 1;
 }
 .arrow-ic-block {
@@ -316,9 +307,9 @@ body.white{
 
 .hero02-bignum-block{
     position: absolute;
-    left: 2.5rem;
+    left: 30px;
     bottom: 20%;
-    font-size: 30vh;
+    font-size: 15vw;
     line-height: .6;
     letter-spacing: -.05em;
 }
@@ -339,7 +330,7 @@ body.white{
     overflow: hidden;
     z-index: -10;
 }
-.hero02-bignum-item{ opacity: 1; padding: 2rem 0; }
+.hero02-bignum-item{ opacity: 1; padding: 30px 0; }
 .hero02-circle-block{
     position: relative;
     width: 100vw;
@@ -398,8 +389,8 @@ body.white{
     align-items: center;
     justify-content: center;
     gap: 20px;
-    font-size: .75rem;
-    letter-spacing: .05em;
+    font-size: 12px;
+    letter-spacing: .05px;
     overflow: hidden;
 }
 .circle-bot-tx-list{
@@ -415,7 +406,7 @@ body.white{
     display: flex;
     justify-content: center;
     width: 100%;
-    font-size: 2.9vh;
+    font-size: 1.5vw;
     line-height: 1;
     text-transform: uppercase;
     overflow: hidden;
@@ -436,8 +427,8 @@ body.white{
     top: 0;left: 0;right: 0;bottom: 0;
 }
 .point{
-    width: 0.625rem;
-    height: 0.625rem;
+    width: 10px;
+    height: 10px;
     background: #000;
     border-radius: 100%;
 }
@@ -496,7 +487,7 @@ body.white{
 .space02-left-title-block{
     display: flex;
     align-items: flex-end;
-    column-gap: 2rem;
+    column-gap: 20px;
 }
 .space02-left-title-block .big-num{ overflow: hidden; }
 .space02-left-title-block .sub-tx{
@@ -509,8 +500,7 @@ body.white{
     display: flex;
     flex-direction: column;
     width: 100%;
-    row-gap: .75rem;
-    font-size: 4.75vh;
+    font-size: 3vw;
     line-height: 1.2;
     text-transform: uppercase;
     font-weight: 300;
@@ -518,7 +508,7 @@ body.white{
 .space02-left-list-block .space02-left-item{
     position: relative;
     display: flex;
-    gap: 1.25rem;
+    gap: 20px;
     align-items: center;
 }
 .space02-left-list-block .space02-left-item .arrow-ic{
@@ -531,10 +521,10 @@ body.white{
 .space02-left-list-block .space02-left-item .tx-bar{
     position: absolute;
     left: 0;
+    bottom: 10px;
     height: 1px;
     width: 0;
     background: #fff;
-    bottom: 0.25rem;
 }
 .space02-arrow-block{
     position: relative;
@@ -553,10 +543,12 @@ body.white{
 }
 .space02-hidden-item{
     position: absolute;
-    bottom: 0;
-    width: 20rem;
+    width: 1000px;
+    left: 0;
+    bottom: 10px;
     opacity: 0;
 }
+.space02-hidden-item p{ font-size: 1vw; }
 .space02-right-block{ width: 50%; }
 
 /* studio css */
@@ -651,13 +643,7 @@ body.white{
 }
 
 @media (min-width:769px) and (max-width:1399px) {
-    /* .scroll-content{
-        display: flex;
-        width: max-content;
-        flex-direction: column;
-        gap: 0;
-        height: 100vh;
-    } */
+   
     .breek-inner .breek-sticky-block{
         flex-direction: column;
         padding-top: 50px;
@@ -730,8 +716,6 @@ body.white{
         padding-bottom: 0px; 
         line-height: 1.2; 
     }
-
-
 }
 
 /* mobile */
@@ -749,7 +733,6 @@ body.white{
     }
 
     /* hero section */
-  
     .hero-laser-block{
         padding: 0 20px;
     }
@@ -849,7 +832,9 @@ body.white{
         letter-spacing: -.05em;
     }
     .hero02-service-item .hero02-service-tx{ font-size: 12px; }
-
+    .circle-bot-tx{
+        font-size: 5vw;
+    }
     /* space css */
     .sec-space{ background: #fff; }
     .sec-space .space-inner{
