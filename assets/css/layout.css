@@ -64,6 +64,8 @@
 .header-menu{
     position: relative;
     display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 20px;
     line-height: 1.2;
     text-transform: uppercase;
@@ -92,12 +94,10 @@
     clip-path: inset(50% 0% 30% 0%);
     background: #000;
 }
-.header-sidebar-block{
-    display: none;
-}
+.header-sidebar-block{ display: none; }
 
 .header-sidebar-list{
-    padding: 100px;
+    padding: 50px;
     display: flex;
     flex-direction: column;
     gap: 50px;
@@ -192,4 +192,11 @@
         z-index: 1000;
     }
     .footer-util-block .footer-util-left{ display: flex; column-gap: 10px; };
+}
+
+@media (max-width:500px) {
+    .header-sidebar-list{
+        gap: 10px;
+    }
+    
 }
