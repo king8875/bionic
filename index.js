@@ -1,11 +1,4 @@
 history.scrollRestoration = "manual"
-// //lenis 스크롤 스무스
-const lenis = new Lenis();
-lenis.on('scroll', ScrollTrigger.update);
-gsap.ticker.add((time) => {
-    lenis.raf(time * 1000);
-});
-gsap.ticker.lagSmoothing(0);
 
 // 화면 새로고침
 let resizeTimeout;
@@ -170,14 +163,10 @@ ScrollTrigger.create({
         className:"white"
     },
     onLeave: function(){
-        gsap.to(".white-block",{
-            backgroundColor:"#000",
-        });
+        gsap.to(".white-block",{ backgroundColor:"#000", });
     },
     onEnterBack: function(){
-        gsap.to(".white-block",{
-            backgroundColor:"#fff",
-        });
+        gsap.to(".white-block",{ backgroundColor:"#fff", });
     }
   
 });
@@ -215,7 +204,13 @@ $(HeaderSidebar).on('click', function () {
 let mm = gsap.matchMedia();
 //pc 버전
 mm.add("(min-width: 769px)", function () {
-    
+    // //lenis 스크롤 스무스
+    const lenis = new Lenis();
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add((time) => {
+        lenis.raf(time * 1000);
+    });
+    gsap.ticker.lagSmoothing(0);
     // 첫번째 가로 스크롤 gsap
     const hori1 = gsap.to('.scroll-content', {
         scrollTrigger: {
@@ -367,7 +362,7 @@ mm.add("(min-width: 769px)", function () {
             end: "100% 100%",
             scrub: 0,
             onUpdate: function (self) {
-                idx = Math.floor(self.progress * 7);
+                idx = Math.floor(self.progress * 8);
                 idx2 = Math.floor(self.progress * 8);
                 gsap.to('.hero02-bignum-item', { yPercent: 100 * -idx });
                 gsap.to('.circle-top-cur-tx p', { yPercent: 100 * -idx });
@@ -385,7 +380,7 @@ mm.add("(min-width: 769px)", function () {
                     // 인덱스 범위를 확인하여 투명도 조절
                     if (idx2 + 1 < pointList.length) {
                         gsap.to(pointList[idx2 + 1].querySelector('.point'), 1, { scale: 0, duration: 2 });
-                        gsap.to($('.hero02-service-item')[idx], { opacity: 0 });
+                        gsap.to($('.hero02-service-item')[idx + 1], { opacity: 0 });
                     }
                 }
             }
@@ -710,13 +705,10 @@ mm.add("(max-width: 768px)", function () {
     gsap.set('.hero02-point-list .hero02-point-item:nth-child(6)', { rotate: "180deg", });
     gsap.set('.hero02-point-list .hero02-point-item:nth-child(7)', { rotate: "225deg", });
     gsap.set('.hero02-point-list .hero02-point-item:nth-child(8)', { rotate: "270deg", });
-
-
-
     gsap.set('.hero02-point-item .point', { scale: 0 });
     gsap.set('.hero02-service-item', { opacity: 0 });
 
-    let lastScroll = 0;
+    // let lastScroll = 0;
     const tl = gsap.timeline({
         scrollTrigger: {
             trigger: ".vertical-inner",
@@ -724,7 +716,7 @@ mm.add("(max-width: 768px)", function () {
             end: "100% 100%",
             scrub: 0,
             onUpdate: function (self) {
-                idx = Math.floor(self.progress * 7);
+                idx = Math.floor(self.progress * 8);
                 idx2 = Math.floor(self.progress * 8);
                 gsap.to('.hero02-bignum-item', { yPercent: 100 * -idx });
                 gsap.to('.circle-top-cur-tx p', { yPercent: 100 * -idx });
@@ -737,12 +729,12 @@ mm.add("(max-width: 768px)", function () {
                     gsap.to(pointList[idx2].querySelector('.point'), 1, { scale: 1, duration: 2 });
                     gsap.to($('.hero02-service-item')[idx], { opacity: 1 });
                 }
-                // 스크롤이 올라갈 때
+               // 스크롤이 올라갈 때
                 else {
-                    // 인덱스 범위를 확인하여 투명도 조절
+                // 인덱스 범위를 확인하여 투명도 조절
                     if (idx2 + 1 < pointList.length) {
                         gsap.to(pointList[idx2 + 1].querySelector('.point'), 1, { scale: 0, duration: 2 });
-                        gsap.to($('.hero02-service-item')[idx], { opacity: 0 });
+                        gsap.to($('.hero02-service-item')[idx + 1], { opacity: 0 });
                     }
                 }
             }

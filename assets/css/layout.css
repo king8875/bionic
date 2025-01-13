@@ -94,7 +94,12 @@
     clip-path: inset(50% 0% 30% 0%);
     background: #000;
 }
-.header-sidebar-block{ display: none; }
+.header-sidebar-block{ 
+    display: none; 
+    position: relative;
+    color: #fff;
+    background: #000;
+}
 
 .header-sidebar-list{
     padding: 50px;
@@ -195,8 +200,5 @@
 }
 
 @media (max-width:500px) {
-    .header-sidebar-list{
-        gap: 10px;
-    }
-    
+    .header-sidebar-list{ gap: 10px; }
 }
