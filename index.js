@@ -1,14 +1,14 @@
 history.scrollRestoration = "manual"
 
 // 화면 새로고침
-let resizeTimeout;
-window.addEventListener('resize', () => {
-    clearTimeout(resizeTimeout);
+// let resizeTimeout;
+// window.addEventListener('resize', () => {
+//     clearTimeout(resizeTimeout);
     
-    resizeTimeout = setTimeout(() => {
-        window.location.reload();
-    }, 200);
-});
+//     resizeTimeout = setTimeout(() => {
+//         window.location.reload();
+//     }, 200);
+// });
 
 // Lottie 애니메이션 로드 및 설정
 gsap.set('.header', { autoAlpha: 0 });
@@ -32,22 +32,41 @@ animation.addEventListener('complete', function () {
 });
 
 // lenis scrollTo
-$('.header .header-content .header-util-item-link').click(function (e) {
-    e.preventDefault();
-    gsap.to(window, {
-        duration: 0.7,
-        scrollTo: { x: "#footer" },
-    });
-});
+
+
+
+
+// $('.header .header-content .header-util-item-link').click(function (e) {
+//     e.preventDefault();
+//     gsap.to(window, {
+//         duration: 0.7,
+//         scrollTo: { x: "#footer" },
+//     });
+// });
 
 //text분리 함수
-const splitTextH2 = new SplitType('[data-text="split"]', { types: 'chars' });
-$('[data-text="split"]').find('.char').wrapInner('<div class="char-wrap">')
-$('[data-text="split"]').find('.char-wrap').each(function (index) {
-    // 홀수 인덱스에는 -100%, 짝수 인덱스에는 100%를 적용
-    const transformValue = index % 2 === 0 ? '100%' : '-100%';
-    $(this).css('transform', `translateX(${transformValue})`);
-});
+// const splitTextH2 = new SplitType('[data-text="split"]', { types: 'chars' });
+// 모든 `.char` 요소를 찾아 `.char-wrap`으로 감싸기
+// document.querySelectorAll('[data-text="split"] .char').forEach(char => {
+//     const wrap = document.createElement('div');
+//     wrap.classList.add('char-wrap');
+//     wrap.appendChild(char.cloneNode(true)); // 기존 노드를 복제하여 감싸기
+//     char.replaceWith(wrap); // 기존 `.char`를 새로운 `.char-wrap`으로 교체
+// });
+
+// //`.char-wrap` 요소들을 찾아서 홀/짝에 따라 `translateX` 값 적용
+// document.querySelectorAll('[data-text="split"] .char-wrap').forEach((wrap, index) => {
+//     const transformValue = index % 2 === 0 ? '100%' : '-100%';
+//     wrap.style.transform = `translateX(${transformValue})`;
+// });
+
+
+// $('[data-text="split"]').find('.char').wrapInner('<div class="char-wrap">')
+// $('[data-text="split"]').find('.char-wrap').each(function (index) {
+//     // 홀수 인덱스에는 -100%, 짝수 인덱스에는 100%를 적용
+//     const transformValue = index % 2 === 0 ? '100%' : '-100%';
+//     $(this).css('transform', `translateX(${transformValue})`);
+// });
 
 // 배경 이미지 비디오 gsap
 gsap.set('.video-container .first_img', { autoAlpha: 0 });
@@ -115,7 +134,7 @@ document.querySelectorAll('.header-util-item-link').forEach(element => {
     });
 });
 
-const LoginsplitText = new SplitType('.header-login-tx', { types: 'chars' });
+// const LoginsplitText = new SplitType('.header-login-tx', { types: 'chars' });
 
 $('.header-login-link').on('mouseenter', function () {
     gsap.to('.header-login-ic-block .header-login-ic:first-child', { x: 10, y: -10 });
@@ -128,29 +147,64 @@ $('.header-login-link').on('mouseenter', function () {
 });
 
 // 텍스트 분리 함수
+// function wrapEachCharacter(element) {
+//     const text = element.textContent;
+//     element.innerHTML = '';
+//     text.split('').forEach(char => {
+//         const span = document.createElement('span');
+//         span.textContent = char;
+//         element.appendChild(span);
+//     });
+// };
+// $('.header-util-item-link').each(function () {
+//     $(this).on('mouseover', function () {
+//         gsap.to($(this).siblings('.tx-bottom-line'), { x: 0 });
+//     });
+//     $(this).on('mouseleave', function () {
+//         gsap.to($(this).siblings('.tx-bottom-line'), { x: -100 });
+//     });
+// });
+// $('.header-sidebar-item').on('mouseover', function() {
+//     const target = $(this).find('.tx-bottom-line'); // 현재 요소의 tx-bottom-line 찾기
+//     gsap.to(target[0], { x: 0, duration: 0.1 }); // 애니메이션 적용
+// }).on('mouseleave', function() {
+//     const target = $(this).find('.tx-bottom-line');
+//     gsap.to(target[0], { x: '-100%', duration: 0.1 }); // 애니메이션 원래 상태로 복귀
+// });
+
+// 텍스트 분리 함수
 function wrapEachCharacter(element) {
     const text = element.textContent;
-    element.innerHTML = '';
+    element.innerHTML = ''; 
     text.split('').forEach(char => {
         const span = document.createElement('span');
         span.textContent = char;
         element.appendChild(span);
     });
-};
-$('.header-util-item-link').each(function () {
-    $(this).on('mouseover', function () {
-        gsap.to($(this).siblings('.tx-bottom-line'), { x: 0 });
+}
+
+// header-util-item-link에 마우스 이벤트 추가
+document.querySelectorAll('.header-util-item-link').forEach(item => {
+    item.addEventListener('mouseover', () => {
+        const bottomLine = item.querySelector('.tx-bottom-line');
+        gsap.to(bottomLine, { x: 0 });
     });
-    $(this).on('mouseleave', function () {
-        gsap.to($(this).siblings('.tx-bottom-line'), { x: -100 });
+    item.addEventListener('mouseleave', () => {
+        const bottomLine = item.querySelector('.tx-bottom-line');
+        gsap.to(bottomLine, { x: -100 });
     });
 });
-$('.header-sidebar-item').on('mouseover', function() {
-    const target = $(this).find('.tx-bottom-line'); // 현재 요소의 tx-bottom-line 찾기
-    gsap.to(target[0], { x: 0, duration: 0.5 }); // 애니메이션 적용
-}).on('mouseleave', function() {
-    const target = $(this).find('.tx-bottom-line');
-    gsap.to(target[0], { x: '-100%', duration: 0.5 }); // 애니메이션 원래 상태로 복귀
+
+// header-sidebar-item에 마우스 이벤트 추가
+document.querySelectorAll('.header-sidebar-item').forEach(item => {
+    item.addEventListener('mouseover', () => {
+        const target = item.querySelector('.tx-bottom-line');
+        gsap.to(target, { x: 0, duration: 0.4 });
+    });
+    item.addEventListener('mouseleave', () => {
+        const target = item.querySelector('.tx-bottom-line');
+        gsap.to(target, { x: '-100%', duration: 0.4 });
+    });
 });
 // 배경색 변경
 ScrollTrigger.create({
