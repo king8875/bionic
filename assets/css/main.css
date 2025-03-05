@@ -314,7 +314,7 @@ body.white{
     position: absolute;
     left: 30px;
     bottom: 20%;
-    font-size: 15vw;
+    font-size: 230px;
     line-height: .6;
     letter-spacing: -.05em;
 }
@@ -330,12 +330,15 @@ body.white{
     top: -12rem;
     display: flex;
     flex-direction: column;
-    padding-top: 10px;
+    padding-top: 33px;
     font-family: 'Trash-Medium',sans-serif;
     overflow: hidden;
     z-index: -10;
 }
-.hero02-bignum-item{ opacity: 1; padding: 30px 0; }
+.hero02-bignum-item{ 
+    opacity: 1; 
+    padding: 30px 0; 
+}
 .hero02-circle-block{
     position: relative;
     width: 100vw;
@@ -525,6 +528,8 @@ body.white{
 }
 .space02-left-list-block .space02-left-item .space02-left-list-tx{
     position: relative;
+    cursor: grab;
+    line-height: 1.5;
 }
 .space02-left-list-block .space02-left-item .tx-bar{
     position: absolute;
@@ -650,7 +655,7 @@ body.white{
 }
 
 @media (min-width:769px) and (max-width:1399px) {
-   
+    
     .breek-inner .breek-sticky-block{
         flex-direction: column;
         padding-top: 50px;
@@ -687,10 +692,9 @@ body.white{
     }
     .hero02-bignum-block{
         position: absolute;
-        left:25%;
+        left:30%;
         bottom: 10%;
-        font-size: 30vh;
-        line-height: .6;
+        font-size: 200px;
         height: 40px;
         letter-spacing: -.05em;
     }
@@ -889,6 +893,7 @@ body.white{
     .space02-left-list-block .space02-left-item .space02-left-list-tx{
         position: relative;
         display: flex;
+        cursor: grab;
     }
     .space02-left-title-block{
         display: flex;
