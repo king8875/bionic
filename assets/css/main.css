@@ -1,7 +1,7 @@
 [data-text="split"] .char{overflow: hidden;}
 body{ 
     overflow-x: hidden;
-    transition: .4s;
+    /* transition: .4s; */
     color: #fff;
     background: #000; 
 }

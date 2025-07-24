@@ -77,7 +77,6 @@ document.querySelectorAll('.header-util-item-link').forEach(element => {
                 opacity: 0,
                 y: 0,
                 stagger: 0.05,
-                duration: 0.1,
                 onComplete: () => {
                     gsap.to(element.querySelectorAll('span'), {
                         opacity: 1,
@@ -93,7 +92,6 @@ document.querySelectorAll('.header-util-item-link').forEach(element => {
             opacity: 1,
             y: 0,
             stagger: 0.05,
-            duration: 0.3,
         });
     });
 });
